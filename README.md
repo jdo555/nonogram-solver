@@ -1,14 +1,14 @@
 # A nonogram-solver written in Common Lisp
 
-## Important Notice
+![Sample run of program](./gifs/nonogram-solver-sample-run.gif)
 
-The code provided in this repository is only a sampling of the full project. The full project is over 1500 lines of code, excluding all testing functionality and other data. Note that I created this program without any reference to any other existing nonogram-solvers, and I used no foreign libraries or any kind of "import".
+## IMPORTANT
+
+The code provided in this repository is only a sampling of the full project. The full project is over 1500 lines of code, excluding all testing functionality and other data. Note that I created this program without any reference to any other existing nonogram-solvers, and I used no foreign libraries of any kind (except in creating the clicker).
 
 ## Purpose of Program
 
-(Primarily this project was done for my own enjoyment.)
-
-This program is meant to be used to solve nonograms of any size. It is generally effective up to 25 x 25 size nonograms, beyond which it is either too slow or simply cannot solve.
+This program is meant to be used to solve nonograms of any size. It is generally effective up to 15 x 15 size nonograms.
 
 It can also be used to learn basic to intermediate nonogram-solving techniques. At execution, this program lists out (via command line) a neat and organized display of each change that it has made to the nonogram along with the "name" of the technique used.
 
@@ -24,7 +24,7 @@ Finally, my solver does not (currently) consider what-if scenarios to build up k
 
 ## Solving
 
-To solve a nonogram with this program, begin by entering a the "clue" data. I have implemented a few ways of doing this - some convenient, others less so. After this the program will display the created nonogram and then attempt to solve it, while outputting each step it takes.
+To solve a nonogram with this program, begin by entering a the "clue" data. I have implemented a few ways of doing this - some convenient, others less so. After this, the program will display the created nonogram and then attempt to solve it, while outputting each step it takes.
 
 The program expects to receive a valid assortment of clues.
 
@@ -34,6 +34,7 @@ This program should only fail by not finishing the nonogram; it should never giv
 
 As for testing, a move-list is output to the file-system (at the same directory). I created a clicker that uses this move-list and that conforms to a specific nonogram website, so that after running the solver on the appropriate clues, the clicker would apply the appropriate clicks to the web-page's nonogram, verifying the solution. Since I still have not fully automated the process, I have completed roughly only 100+ tests.
 
-## Video demo
+<br>
+<br>
 
-(...forthcoming...)
+![Sample clicker test-run](./gifs/nonogram-solver-sample-test.gif)
