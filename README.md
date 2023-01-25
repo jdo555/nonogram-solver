@@ -24,7 +24,7 @@ Finally, my solver does not (currently) consider what-if scenarios to build up k
 
 ## Solving
 
-To solve a nonogram with this program, begin by entering a the "clue" data. I have implemented a few ways of doing this - some convenient, others less so. After this, the program will display the created nonogram and then attempt to solve it, while outputting each step it takes.
+To solve a nonogram with this program, begin by entering the "clue" data. I have implemented a few ways of doing this - some convenient, others less so. After this, the program will display the created nonogram and then attempt to solve it, while outputting each step it takes.
 
 The program expects to receive a valid assortment of clues.
 
