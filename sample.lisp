@@ -1,3 +1,6 @@
+;;;; IMPORTANT: This is only a sample of the entire project.
+;;;; The following is one of the programmed "techniques" as used in the full nonogram-solver code.
+
 ;;; assesses a line-segment from left-to-right and then from right-to-left, marking any "empties" based on clues whose proximity to an edge implies empty locations
 ;;; this method looks inward from the edge coordinate x spaces PAST the start point, where x is the considered (first or last) clue's value
 ;;; it then iterates such that the "edge" coordinate and the "checked" coordinate both shift 1 space in the same direction towards the center...
