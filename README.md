@@ -50,81 +50,101 @@ However, there are no known bugs at this time.
 
 ## Examples in using the program
 
-#### Starting the demo
+### Starting the demo
 
 Load the ASD file for the program (change the path according to file location).
-> (asdf:load-asd #p"enter/path/to/nonogram-solver.asd")
+```
+(asdf:load-asd #p"enter/path/to/nonogram-solver.asd")
+```
 
 Load the demo system.
-> (asdf:load-system "nonogram-solver/cli-demo")
+```
+(asdf:load-system "nonogram-solver/cli-demo")
+```
 
 Use the correct package.
-> (in-package :nonogram-solver/cli-demo)
+```
+(in-package :nonogram-solver/cli-demo)
+```
 
 Run the appropriate function
-> (main-menu)
+```
+(main-menu)
+```
 
-#### Loading up the main library
+### Loading up the main library
 
 If necessary, return to cl-user package.
-> (in-package :cl-user)
+```
+(in-package :cl-user)
+```
 
 If necessary, load the ASD file for the program (again, change the path according to file location)
-> (asdf:load-asd #p"enter/path/to/nonogram-solver.asd")
+```
+(asdf:load-asd #p"enter/path/to/nonogram-solver.asd")
+```
 
 Load the nonogram-solver system.
-> (asdf:load-system "nonogram-solver")
+```
+(asdf:load-system "nonogram-solver")
+```
 
 Use the correct package.
-> (in-package :nonogram-solver)
+```
+(in-package :nonogram-solver)
+```
 
-#### Testing main functions against a single line using a macro from main library
+### Testing main functions against a single line using a macro from main library
 
 Follow the steps for **Loading up the main library**.
 
 To solve for a line with clues as in the provided picture...
-...
+
+![example line](./images/example-line.PNG)
+
 Run the following code.
-> (with-single-line-nonogram n l 10 (vector 3 4)
->   (print-grid n nil nil nil)
->   (find-overlap n l +full-line+))
+```
+(with-single-line-nonogram n l 10 (vector 4 3)
+  (print-grid n nil nil nil)
+  (find-overlap n l +full-line+))
+```
 
 The following text will be output to illustrate the correct markings to be made...
-> ###########################    0     ###########################
-> 
-> 
->        # # # # # # # # # #
->  3 4 # - - - - - - - - - -
-> 
-> ################################################################
-> 
-> ###########################    1     ###########################
-> 
-> FIND-OVERLAP (for full-line) made changes to h-0
-> (0 . 2) was marked as 1
-> 
->        # # # # # # # # # #
->  3 4 # - -~1~- - - - - - -
-> 
-> ################################################################
-> 
-> ###########################    2     ###########################
-> 
-> FIND-OVERLAP (for full-line) made changes to h-0
-> (0 . 7) was marked as 1
-> 
->        # # # # # # # # # #
->  3 4 # - - 1 - - - -~1~- -
-> 
-> ################################################################
-> 
-> ###########################    3     ###########################
-> 
-> FIND-OVERLAP (for full-line) made changes to h-0
-> (0 . 6) was marked as 1
-> 
->        # # # # # # # # # #
->  3 4 # - - 1 - - -~1~1 - -
-> 
-> ################################################################
+```text
+###########################    0     ###########################
 
+       # # # # # # # # # #
+ 4 3 # - - - - - - - - - -
+
+################################################################
+
+###########################    1     ###########################
+
+FIND-OVERLAP (for full-line) made changes to h-0
+(0 . 3) was marked as 1
+
+       # # # # # # # # # #
+ 4 3 # - - -~1~- - - - - -
+
+################################################################
+
+###########################    2     ###########################
+
+FIND-OVERLAP (for full-line) made changes to h-0
+(0 . 2) was marked as 1
+
+       # # # # # # # # # #
+ 4 3 # - -~1~1 - - - - - -
+
+################################################################
+
+###########################    3     ###########################
+
+FIND-OVERLAP (for full-line) made changes to h-0
+(0 . 7) was marked as 1
+
+       # # # # # # # # # #
+ 4 3 # - - 1 1 - - -~1~- -
+
+################################################################
+```
