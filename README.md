@@ -53,44 +53,44 @@ However, there are no known bugs at this time.
 ### Starting the demo
 
 Load the ASD file for the program (change the path according to file location).
-```
+```common-lisp
 (asdf:load-asd #p"enter/path/to/nonogram-solver.asd")
 ```
 
 Load the demo system.
-```
+```common-lisp
 (asdf:load-system "nonogram-solver/cli-demo")
 ```
 
 Use the correct package.
-```
+```common-lisp
 (in-package :nonogram-solver/cli-demo)
 ```
 
 Run the appropriate function
-```
+```common-lisp
 (main-menu)
 ```
 
 ### Loading up the main library
 
 If necessary, return to cl-user package.
-```
+```common-lisp
 (in-package :cl-user)
 ```
 
 If necessary, load the ASD file for the program (again, change the path according to file location)
-```
+```common-lisp
 (asdf:load-asd #p"enter/path/to/nonogram-solver.asd")
 ```
 
 Load the nonogram-solver system.
-```
+```common-lisp
 (asdf:load-system "nonogram-solver")
 ```
 
 Use the correct package.
-```
+```common-lisp
 (in-package :nonogram-solver)
 ```
 
@@ -98,12 +98,12 @@ Use the correct package.
 
 Follow the steps for **Loading up the main library**.
 
-To solve for a line with clues as in the provided picture...
+As an example, to test the FIND-OVERLAP function against a line with clues as in the provided picture...
 
 ![example line](./images/example-line.PNG)
 
 Run the following code.
-```
+```common-lisp
 (with-single-line-nonogram n l 10 (vector 4 3)
   (print-grid n nil nil nil)
   (find-overlap n l +full-line+))
