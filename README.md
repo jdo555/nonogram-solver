@@ -1,6 +1,6 @@
 # A nonogram-solver written in Common Lisp
 
-![Sample run of program](./gifs/nonogram-solver-sample-run.gif)
+![Sample run of program](./images/nonogram-solver-sample-run.gif)
 
 ## Purpose of Program
 
@@ -37,7 +37,7 @@ As for testing, a move-list is output to the file-system (at the same directory)
 <br>
 <br>
 
-![Sample clicker test-run](./gifs/nonogram-solver-sample-test.gif)
+![Sample clicker test-run](./images/nonogram-solver-sample-test.gif)
 
 <br>
 (Note that the code for the clicker is not provided in this repository.)
